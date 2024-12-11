@@ -1,7 +1,0 @@
-{
-    "jwt": {
-        "key": "jwt_token",
-        "secretKey": "`a9gJxF4%Ht2&UcI*OqM#7Vp!RsZ3Dl$n5ByQw+AeKm&Q4f8",
-        "expiryTime": 10
-    }
-}
