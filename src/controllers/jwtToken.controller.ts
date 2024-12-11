@@ -34,7 +34,7 @@ export class JwtController {
     }
 
     @Get(routeListEnum.VerifyJwtToken)
-    async verifyJwtToken(@Body() verifyToken: VerifyJwtToken,@Req() request: Request, @Res({passthrough: true}) response: Response)
+    async verifyJwtToken(@Req() request: Request, @Res({passthrough: true}) response: Response)
     {
         let decryptJwtToken = await this.jwtTokenService.verifyJwtToken({token: request.cookies[this.config.jwt.key]}) as VerifyJwtToken
         if(decryptJwtToken)
@@ -54,7 +54,7 @@ export class JwtController {
     }
 
     @Get(routeListEnum.GetToken)
-    async getJwtToken(@Body() getToken: GetJwtToken, @Req() request: Request)
+    async getJwtToken(@Req() request: Request)
     {
         let token = request.cookies[this.config.jwt.key]
         let encDecToken = new GetJwtToken({

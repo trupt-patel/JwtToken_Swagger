@@ -34,7 +34,7 @@ let JwtController = class JwtController {
         this.jwtTokenService.addTokenInCookies(response, generatedToken);
         return this.response.getResponse200({ msg: tagEnum_1.JwtTokenStatusTag.GENERATED_TOKEN_SUCCESS, data: generatedToken });
     }
-    async verifyJwtToken(verifyToken, request, response) {
+    async verifyJwtToken(request, response) {
         let decryptJwtToken = await this.jwtTokenService.verifyJwtToken({ token: request.cookies[this.config.jwt.key] });
         if (decryptJwtToken) {
             let generatedToken = await this.jwtTokenService.generateJWTToken({ username: decryptJwtToken.username });
@@ -47,7 +47,7 @@ let JwtController = class JwtController {
         response.clearCookie(this.config.jwt.key);
         return this.response.getResponse200({ msg: tagEnum_1.JwtTokenStatusTag.REMOVE_TOKEN_SUCCESS, data: null });
     }
-    async getJwtToken(getToken, request) {
+    async getJwtToken(request) {
         let token = request.cookies[this.config.jwt.key];
         let encDecToken = new jwtToken_dto_1.GetJwtToken({
             encryptedToken: token,
@@ -70,11 +70,10 @@ __decorate([
 ], JwtController.prototype, "generateJwtToken", null);
 __decorate([
     (0, common_1.Get)(routeListEnum_1.routeListEnum.VerifyJwtToken),
-    __param(0, (0, common_1.Body)()),
-    __param(1, (0, common_1.Req)()),
-    __param(2, (0, common_1.Res)({ passthrough: true })),
+    __param(0, (0, common_1.Req)()),
+    __param(1, (0, common_1.Res)({ passthrough: true })),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [jwtToken_dto_1.VerifyJwtToken, Object, Object]),
+    __metadata("design:paramtypes", [Object, Object]),
     __metadata("design:returntype", Promise)
 ], JwtController.prototype, "verifyJwtToken", null);
 __decorate([
@@ -86,10 +85,9 @@ __decorate([
 ], JwtController.prototype, "removeJwtToken", null);
 __decorate([
     (0, common_1.Get)(routeListEnum_1.routeListEnum.GetToken),
-    __param(0, (0, common_1.Body)()),
-    __param(1, (0, common_1.Req)()),
+    __param(0, (0, common_1.Req)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [jwtToken_dto_1.GetJwtToken, Object]),
+    __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], JwtController.prototype, "getJwtToken", null);
 exports.JwtController = JwtController = __decorate([
