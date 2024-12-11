@@ -3,6 +3,8 @@ import cookieParser from 'cookie-parser';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { AppModule } from './modules/app.module';
 import { routeListEnum } from './const/routeListEnum';
+import * as path from 'path';
+import * as express from 'express';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -12,6 +14,8 @@ async function bootstrap() {
     credentials: true,
   });
   app.use(cookieParser());
+
+  app.use('/swagger-ui', express.static(path.join(__dirname, '..', 'node_modules', 'swagger-ui-dist')));
 
   // Set global prefix
   app.setGlobalPrefix(routeListEnum.API_START_NOTATION);
@@ -26,6 +30,10 @@ async function bootstrap() {
   const documentFactory = () => SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, documentFactory);
 
-  // Listen on the given port or default to 4000
+ 
+
+  // Listen on the given port or default to 3000
   await app.listen(3000);
 }
+
+bootstrap();
