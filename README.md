@@ -45,6 +45,9 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
+## Deploy App
+https://jwt-token-swagger.vercel.app/api
+
 ## Run tests
 
 ```bash
