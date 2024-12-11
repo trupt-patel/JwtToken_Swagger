@@ -1,6 +1,6 @@
 export enum routeListEnum {
 
-    API_START_NOTATION = "/api",
+    API_START_NOTATION = "api",
 
     GenerateJwtToken = "/jwt_token/generate",
     VerifyJwtToken = "/jwt_token/verify",

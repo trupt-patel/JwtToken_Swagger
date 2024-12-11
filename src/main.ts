@@ -7,21 +7,25 @@ import { routeListEnum } from './const/routeListEnum';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
+  // Enable CORS and cookie parser
   app.enableCors({
     credentials: true,
-  })
+  });
   app.use(cookieParser());
+
+  // Set global prefix
   app.setGlobalPrefix(routeListEnum.API_START_NOTATION);
 
+  // Set up Swagger documentation
   const config = new DocumentBuilder()
-  .setTitle('API Documentation')
-  .setDescription('JWT Token')
-  .setVersion('1.0')
-  .build();
+    .setTitle('API Documentation')
+    .setDescription('JWT Token')
+    .setVersion('1.0')
+    .build();
   
   const documentFactory = () => SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, documentFactory);
 
-  await app.listen(process.env.PORT ?? 4000);
+  // Listen on the given port or default to 4000
+  await app.listen(3000);
 }
-bootstrap();
