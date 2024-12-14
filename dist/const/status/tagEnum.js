@@ -8,6 +8,8 @@ var JwtTokenStatusTag;
     JwtTokenStatusTag["VERIFY_TOKEN_SUCCESS"] = "VERIFY_TOKEN_SUCCESS";
     JwtTokenStatusTag["VERIFY_TOKEN_FAILED"] = "VERIFY_TOKEN_FAILED";
     JwtTokenStatusTag["REMOVE_TOKEN_SUCCESS"] = "REMOVE_TOKEN_SUCCESS";
+    JwtTokenStatusTag["UPDATE_JWT_CONFIGURATION_SUCCESS"] = "UPDATE_JWT_CONFIGURATION_SUCCESS";
+    JwtTokenStatusTag["UPDATE_JWT_CONFIGURATION_FAILED"] = "Expiry Time should not be 0";
 })(JwtTokenStatusTag || (exports.JwtTokenStatusTag = JwtTokenStatusTag = {}));
 var CommonStatusTag;
 (function (CommonStatusTag) {

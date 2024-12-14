@@ -4,6 +4,8 @@ exports.routeListEnum = void 0;
 var routeListEnum;
 (function (routeListEnum) {
     routeListEnum["API_START_NOTATION"] = "api";
+    routeListEnum["GetJwtConfiguration"] = "/jwt_token/configuration";
+    routeListEnum["UpdateJwtConfiguration"] = "/jwt_token/configuration";
     routeListEnum["GenerateJwtToken"] = "/jwt_token/generate";
     routeListEnum["VerifyJwtToken"] = "/jwt_token/verify";
     routeListEnum["RemoveJwtToken"] = "/jwt_token/remove";

@@ -8,7 +8,7 @@ import { ServeStaticModule } from '@nestjs/serve-static';
     JwtTokenModule,
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'dist', 'node_modules', 'swagger-ui-dist'),
-      serveRoot: '/api',  // You can change this path
+      serveRoot: '/', 
     }),
   ],
   controllers: [],

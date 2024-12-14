@@ -21,7 +21,7 @@ exports.AppModule = AppModule = __decorate([
             jwtToken_module_1.JwtTokenModule,
             serve_static_1.ServeStaticModule.forRoot({
                 rootPath: (0, path_1.join)(__dirname, '..', 'dist', 'node_modules', 'swagger-ui-dist'),
-                serveRoot: '/api',
+                serveRoot: '/',
             }),
         ],
         controllers: [],

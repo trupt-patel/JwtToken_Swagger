@@ -9,6 +9,18 @@ export class GenerateJwtToken {
     }
 }
 
+export class JwtConfiguration {
+    @ApiProperty()
+    ExpiryTime: number;
+    @ApiProperty()
+    Key: string
+
+    constructor( {ExpiryTime, Key} : {ExpiryTime: number, Key: string}) {
+        this.ExpiryTime = ExpiryTime;
+        this.Key = Key;
+    }
+}
+
 export class VerifyJwtToken {
     @ApiProperty()
     username: string

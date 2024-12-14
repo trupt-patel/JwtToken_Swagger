@@ -4,6 +4,14 @@ export declare class GenerateJwtToken {
         username: string;
     });
 }
+export declare class JwtConfiguration {
+    ExpiryTime: number;
+    Key: string;
+    constructor({ ExpiryTime, Key }: {
+        ExpiryTime: number;
+        Key: string;
+    });
+}
 export declare class VerifyJwtToken {
     username: string;
     iat: number;

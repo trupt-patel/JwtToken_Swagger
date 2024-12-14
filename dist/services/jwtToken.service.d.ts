@@ -3,8 +3,9 @@ import { Response } from "express";
 export declare class JwtTokenService {
     private readonly jwtService;
     private jwtInfo;
-    private readonly config;
+    private config;
     constructor(jwtService: JwtService);
+    refreshJwtConfiguration(): Promise<void>;
     generateJWTToken({ username }: {
         username: string;
     }): Promise<string>;

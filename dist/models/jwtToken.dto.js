@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetJwtToken = exports.VerifyJwtToken = exports.GenerateJwtToken = void 0;
+exports.GetJwtToken = exports.VerifyJwtToken = exports.JwtConfiguration = exports.GenerateJwtToken = void 0;
 const swagger_1 = require("@nestjs/swagger");
 class GenerateJwtToken {
     constructor({ username }) {
@@ -21,6 +21,21 @@ __decorate([
     (0, swagger_1.ApiProperty)(),
     __metadata("design:type", String)
 ], GenerateJwtToken.prototype, "username", void 0);
+class JwtConfiguration {
+    constructor({ ExpiryTime, Key }) {
+        this.ExpiryTime = ExpiryTime;
+        this.Key = Key;
+    }
+}
+exports.JwtConfiguration = JwtConfiguration;
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    __metadata("design:type", Number)
+], JwtConfiguration.prototype, "ExpiryTime", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    __metadata("design:type", String)
+], JwtConfiguration.prototype, "Key", void 0);
 class VerifyJwtToken {
     constructor({ username, iat, exp }) {
         this.username = username;

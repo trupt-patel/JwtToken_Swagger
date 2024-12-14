@@ -7,9 +7,14 @@ import { ConfigurationJSONFileDTO, JwtTokenDTO } from "src/models/configuration.
 @Injectable()
 export class JwtTokenService {
     private jwtInfo: JwtTokenDTO;
-    private readonly config: ConfigurationJSONFileDTO;
+    private config: ConfigurationJSONFileDTO;
 
     constructor(private readonly jwtService: JwtService) {
+        this.refreshJwtConfiguration();
+    }
+
+    async refreshJwtConfiguration()
+    {
         this.config = readConfigurationJsonFile();
         try {
             const data = readConfigurationJsonFile() as ConfigurationJSONFileDTO;

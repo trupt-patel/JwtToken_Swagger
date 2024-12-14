@@ -19,6 +19,9 @@ const jsonReader_1 = require("../helper/jsonReader");
 let JwtTokenService = class JwtTokenService {
     constructor(jwtService) {
         this.jwtService = jwtService;
+        this.refreshJwtConfiguration();
+    }
+    async refreshJwtConfiguration() {
         this.config = (0, jsonReader_1.readConfigurationJsonFile)();
         try {
             const data = (0, jsonReader_1.readConfigurationJsonFile)();
