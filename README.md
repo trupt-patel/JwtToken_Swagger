@@ -1,7 +1,7 @@
 
 ## Description
 
-This JWT Token Releated API for Generate, Update, Verify, Remove, Get Token.
+This JWT Token Releated API for Generate, Update, Verify, Remove, Get Token and also added to change Expiry time and Key which use to add in cookies. Using HS256 algorithm to generate Token and this algorithm and secret key not able to configure.
 
 ## Project setup
 
@@ -25,7 +25,7 @@ $ npm run start:prod
 ## Deploy App
 https://jwt-token-swagger.vercel.app/api
 
-## Deployment
+## How to Deployment your github project
 - Visit the [Vercel](https://vercel.com/) for hosting Nest App.
 - Login with Github account.
 - Import Code from github and click to deploy.
