@@ -23,7 +23,7 @@ $ npm run start:prod
 ```
 
 ## Deploy App
-https://jwt-token-swagger.vercel.app/api
+[https://jwt-token-swagger.vercel.app](https://jwt-token-swagger.vercel.app/)
 
 ## How to Deployment your github project
 - Visit the [Vercel](https://vercel.com/) for hosting Nest App.
